@@ -1,23 +1,53 @@
+/**
+ *
+ * @author Семенов Дмитрий
+ * ПП.Разработчик ПО (Java) [весна 2019-1]
+ *
+ */
 package ru.avalon.java.dev.j10.labs;
 
-import ru.avalon.java.dev.j10.labs.shapes.Shape;
+import ru.avalon.java.dev.j10.labs.shapes.*;
+
+import java.util.Random;
 
 public class Main {
 
     public static void main(String[] args) {
-        Shape[] shapes = null;
 
-        /*
-         * TODO: Выполнить действия над массивом 'shapes'
-         *
-         * 1. Проинициализировать переменную 'shapes' массивом
-         *    содержащим 10 произвольных фигур. Массив должен
-         *    содержать экземпляры классов Circle, Rectangle
-         *    и Triangle.
-         *
-         * 2. Найти в массиве 'shapes' фигуру с максимальной
-         *    площадью. Для поиска фигуры необходимо создать
-         *    статический метод в текущем классе (Main).
-         */
+        Random random = new Random();
+
+        Shape[] shapes = new Shape[10];
+
+        shapes[0] = new Circle(random.nextInt(9) + 1);
+        shapes[1] = new Circle(random.nextInt(9) + 1);
+        shapes[2] = new Circle(random.nextInt(9) + 1);
+        shapes[3] = new Rectangle(random.nextInt(9) + 1, random.nextInt(9) + 1);
+        shapes[4] = new Rectangle(random.nextInt(9) + 1, random.nextInt(9) + 1);
+        shapes[5] = new Rectangle(random.nextInt(9) + 1, random.nextInt(9) + 1);
+        shapes[6] = new Rectangle(random.nextInt(9) + 1, random.nextInt(9) + 1);
+        shapes[7] = new Triangle(random.nextInt(9) + 1, random.nextInt(9) + 1, random.nextInt(9) + 1);
+        shapes[8] = new Triangle(random.nextInt(9) + 1, random.nextInt(9) + 1, random.nextInt(9) + 1);
+        shapes[9] = new Triangle(random.nextInt(9) + 1, random.nextInt(9) + 1, random.nextInt(9) + 1);
+
+        Shape max = searcher(shapes); // возвращает объект biggest типа Shape
+
+    }
+
+    /**
+     *
+     * Вычисляет наибольший (по площади) объект массива
+     *
+     * @param arr - принимаемый массив типа Shape
+     * @return - наибольший элемент массива типа Shape
+     *
+     */
+    public static Shape searcher(Shape[] arr) {
+        Shape biggest = arr[0];
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i].getArea() > biggest.getArea()) {
+                biggest = arr[i];
+            }
+        }
+        return biggest;
     }
 }

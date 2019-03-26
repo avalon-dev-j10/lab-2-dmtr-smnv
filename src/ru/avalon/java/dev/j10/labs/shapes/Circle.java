@@ -1,18 +1,36 @@
 package ru.avalon.java.dev.j10.labs.shapes;
 
-/**
- * Представление об окружности.
- * <p>
- * Окру́жность — замкнутая плоская кривая, которая состоит из
- * всех точек на плоскости, равноудалённых от заданной точки.
- *
- * @see <a href="https://ru.wikipedia.org/wiki/%D0%9E%D0%BA%D1%80%D1%83%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D1%8C">Окружность</a>
- */
-public class Circle {
+public class Circle implements Point, Shape, Ellipse {
 
-    /*
-     * TODO: Реализовать класс 'Circle'
-     * 1. Используйте наследование.
-     * 2. Реализуйте все абстрактные методы.
-     */
+    private float x; // on center
+    private float y; // on circle
+    private final float radius;
+    private final float area;
+
+    public Circle(float radius) {
+        this.radius = radius;
+        area = (float) (Math.PI * radius * radius);
+    }
+
+    @Override
+    public float getX() {
+        return x;
+    }
+
+    @Override
+    public float getY() {
+        return y;
+    }
+
+    @Override
+    public float getArea() {
+        return area;
+    }
+
+    @Override
+    public float getLength() {
+        float circumference = (float) (2 * Math.PI * radius);
+        return circumference; // длина окружности
+    }
+
 }
