@@ -29,7 +29,7 @@ public class Main {
         shapes[8] = new Triangle(random.nextInt(9) + 1, random.nextInt(9) + 1, random.nextInt(9) + 1);
         shapes[9] = new Triangle(random.nextInt(9) + 1, random.nextInt(9) + 1, random.nextInt(9) + 1);
 
-        Shape max = searcher(shapes); // возвращает объект biggest типа Shape
+        Shape max = searcher(shapes); // объект массива shapes с наибольшей площадью
 
     }
 

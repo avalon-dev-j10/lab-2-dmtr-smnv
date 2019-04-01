@@ -13,24 +13,13 @@ public class Circle implements Point, Shape, Ellipse {
     }
 
     @Override
-    public float getX() {
-        return x;
-    }
-
-    @Override
-    public float getY() {
-        return y;
-    }
-
-    @Override
     public float getArea() {
         return area;
     }
 
     @Override
     public float getLength() {
-        float circumference = (float) (2 * Math.PI * radius);
-        return circumference; // длина окружности
+        return (float) (2 * Math.PI * radius); // длина окружности
     }
 
 }

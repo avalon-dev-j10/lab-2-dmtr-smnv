@@ -2,8 +2,12 @@ package ru.avalon.java.dev.j10.labs.shapes;
 
 public interface Point {
 
-    float getX();
+    default float getX() {
+        return 0;
+    }
 
-    float getY();
+    default float getY() {
+        return 0;
+    }
 
 }
