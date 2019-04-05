@@ -1,25 +1,23 @@
 package ru.avalon.java.dev.j10.labs.shapes;
 
-public class Circle implements Point, Shape, Ellipse {
+public class Circle implements Shape, Ellipse {
 
-    private float x; // on center
-    private float y; // on circle
-    private final float radius;
-    private final float area;
+    private final float RADIUS;
+    private final float AREA;
 
     public Circle(float radius) {
-        this.radius = radius;
-        area = (float) (Math.PI * radius * radius);
+        this.RADIUS = radius;
+        AREA = (float) (Math.PI * radius * radius);
     }
 
     @Override
-    public float getArea() {
-        return area;
+    public float getAREA() {
+        return AREA;
     }
 
     @Override
     public float getLength() {
-        return (float) (2 * Math.PI * radius); // длина окружности
+        return (float) (2 * Math.PI * RADIUS); // длина окружности
     }
 
 }

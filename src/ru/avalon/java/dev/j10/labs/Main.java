@@ -44,7 +44,7 @@ public class Main {
     public static Shape searcher(Shape[] arr) {
         Shape biggest = arr[0];
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i].getArea() > biggest.getArea()) {
+            if (arr[i].getAREA() > biggest.getAREA()) {
                 biggest = arr[i];
             }
         }

@@ -2,31 +2,31 @@ package ru.avalon.java.dev.j10.labs.shapes;
 
 public class Triangle implements Shape, Polygon {
 
-    private final float edgeA;
-    private final float edgeB;
-    private final float edgeC;
+    private final float EDGE_A;
+    private final float EDGE_B;
+    private final float EDGE_C;
 
-    private final float perimeter;
-    private final float hP; // half perimeter
-    private final float area;
+    private final float PERIMETER;
+    private final float HP; // half PERIMETER
+    private final float AREA;
 
-    public Triangle(float edgeA, float edgeB, float edgeC) {
-        this.edgeA = edgeA;
-        this.edgeB = edgeB;
-        this.edgeC = edgeC;
-        perimeter = edgeA + edgeB + edgeC;
-        hP = perimeter / 2;
-        area = (float) Math.sqrt(hP * (hP - edgeA) * (hP - edgeB) * (hP - edgeC));
+    public Triangle(float EDGE_A, float EDGE_B, float EDGE_C) {
+        this.EDGE_A = EDGE_A;
+        this.EDGE_B = EDGE_B;
+        this.EDGE_C = EDGE_C;
+        PERIMETER = EDGE_A + EDGE_B + EDGE_C;
+        HP = PERIMETER / 2;
+        AREA = (float) Math.sqrt(HP * (HP - EDGE_A) * (HP - EDGE_B) * (HP - EDGE_C));
     }
 
     @Override
-    public float getArea() {
-        return area;
+    public float getAREA() {
+        return AREA;
     }
 
     @Override
-    public float getPerimeter() {
-        return perimeter;
+    public float getPERIMETER() {
+        return PERIMETER;
     }
 
 }
